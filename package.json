@@ -1,0 +1,40 @@
+{
+  "name": "lock-native-back",
+  "version": "1.0.0",
+  "description": "主要用于移动端监听用户点击系统返回并阻止页面路由自动回退",
+  "main": "dist/bundle.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fuphoenixes/lock-native-back.git"
+  },
+  "keywords": [
+    "lock",
+    "native",
+    "back",
+    "history",
+    "disable",
+    "route"
+  ],
+  "author": "zhaotian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fuphoenixes/lock-native-back/issues"
+  },
+  "homepage": "https://github.com/Fuphoenixes/lock-native-back#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "rollup": "^2.56.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-uglify": "^6.0.4"
+  }
+}
