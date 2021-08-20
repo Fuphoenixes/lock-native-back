@@ -17,18 +17,19 @@ export default {
       show: false  // 控制弹框开关
     }
   },
-  watch: {
-    show(val) {
+  methods: {
+    // 打开弹框时调用
+    open() {
+      this.show = true
+      
       const lockNativeBack = new LockNativeBack({
         onPopState: () => this.show = false     // 用户点击返回按钮时触发
       })
-      if (val) {
-        // 打开弹框时
-        lockNativeBack.lock()
-      } else{
-        // 关闭弹框时
-        lockNativeBack.unLock()
-      }
+      // 打开弹框时锁住
+      lockNativeBack.lock()
+      
+      // 关闭弹框时解锁
+      this.$watch('show', show => !show && lockNativeBack.unLock())
     }
   }
 }
