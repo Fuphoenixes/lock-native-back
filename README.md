@@ -38,6 +38,3 @@ export default {
 - `onPopState` <br/> 
   type: Function
   功能： 导航发生变化，一般是用户点击了系统返回时触发
-- `once` <br/>
-  type: Boolean
-  功能： 是否只阻止一次后就放开，默认 true

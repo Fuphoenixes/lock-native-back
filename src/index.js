@@ -3,12 +3,11 @@
  */
 class LockNativeBack {
   constructor({
-    onPopState = () => {}, // 导航发生变化，一般是用户点击了系统返回时触发
-    once = true // 是否只阻止一次后就放开
+    onPopState = () => {} // 导航发生变化，一般是用户点击了系统返回时触发
   } = {}) {
     this.isLocked = false
-    this.once = once
     this.onPopState = onPopState
+    this.handlePopState = this.handlePopState.bind(this)
   }
 
   lock() {
@@ -22,15 +21,14 @@ class LockNativeBack {
   unLock() {
     if (!this.isLocked) return
     this.isLocked = false
-    window.removeEventListener('popstate', this.handlePopState)
-    window.history.go(-1)
+    setTimeout(() => {
+      window.removeEventListener('popstate', this.handlePopState)
+      window.history.go(-1)
+    })
   }
 
-  handlePopState = () => {
+  handlePopState() {
     window.history.pushState(null, null, this.url)
-    if (this.once) {
-      this.unLock()
-    }
     this.onPopState()
   }
 }

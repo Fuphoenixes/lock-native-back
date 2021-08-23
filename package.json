@@ -1,6 +1,6 @@
 {
   "name": "lock-native-back",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "主要用于移动端监听用户点击系统返回并阻止页面路由自动回退",
   "main": "dist/bundle.js",
   "files": [
